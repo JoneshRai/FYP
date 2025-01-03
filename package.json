@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@ant-design/icons": "^5.5.2",
+    "axios": "^1.7.9",
+    "pusher-js": "^8.4.0-rc2",
+    "react-chat-engine": "^1.11.28"
+  }
+}

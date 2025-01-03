@@ -1,0 +1,133 @@
+body {
+    display: block;
+    margin: 0px;
+  }
+  
+  .art-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: #f4c6d9; /* Light pink background */
+      height: 100vh; /* Full viewport height */
+      width: 100vw; /* Full viewport width */
+      margin: 0; /* Remove default margin */
+      padding: 0; /* Remove default padding */
+      text-align: center;
+      overflow: hidden; /* Prevent scrollbars from appearing */
+    }
+    
+    
+    .art-text {
+      margin-top: 30px;
+      font-size: 2.5rem; /* Larger font size */
+      font-weight: bold;
+      color: #5c0e36;
+    }
+    
+    .button-container {
+      position: fixed; /* Fix the button container relative to the viewport */
+      bottom: 90px; /* Distance from the bottom of the screen */
+      left: 50%; /* Center horizontally */
+      transform: translateX(-50%); /* Adjust centering */
+      display: flex;
+      gap: 30px; /* Adjust spacing between buttons */
+    }
+    
+    .signup-button,
+    .login-button {
+      padding: 15px 30px; /* Larger button size */
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 15px;
+      cursor: pointer;
+      background-color: white;
+      color: black;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    }
+    
+    .signup-button:hover,
+    .login-button:hover {
+      background-color: #f0f0f0;
+    }
+    
+  
+  
+   .art-text {
+      position: absolute;
+      top: 30%; /* Adjust as needed */
+      left: 10%; /* Align the text to the left */
+      font-size: 2.5rem; /* Set a readable font size */
+      font-weight: bold; /* Make the text bold */
+      color: #5c0e36; /* Dark red color */
+      text-align: left; /* Align text to the left */
+      line-height: 1.5; /* Add space between lines */
+      margin: 0; /* Remove any default margins */
+      font-family: 'Inria Serif', serif; /* Set the font to Inria Serif */
+    }
+    
+  
+    
+    @media (max-width: 768px) {
+      .art-image {
+        width: 150px;
+        height: 150px;
+      }
+      .art-text {
+        font-size: 2rem;
+      }
+      .signup-button,
+      .login-button {
+        padding: 10px 20px;
+        font-size: 1rem;
+      }
+    }
+  
+    
+
+
+    
+
+
+
+
+.search-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-input-with-icon {
+    width: 50%;
+    padding: 10px 40px 10px 15px; /* Adjust padding for the icon */
+    font-size: 21px;
+    border: 1px solid #000000;
+    border-radius: 20px;
+  }
+  
+  .search-icon-inside {
+    position: absolute;
+    right: 10px; /* Adjust this for horizontal position */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Ensures perfect vertical centering */
+    font-size: 18px;
+    color: #888;
+  }
+  
+  .profile-icon {
+    position: absolute;
+      width: 49px;
+      height: 70px;
+      top: 8px;
+      right: 30px;
+  }
+  .profile-icon:hover {
+    color: rgb(179, 80, 80); /* Optional: Adds hover effect */
+  }
+  
+  .profile-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
