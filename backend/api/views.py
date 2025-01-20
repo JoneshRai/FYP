@@ -15,12 +15,44 @@ from rest_framework.views import APIView
 from .pusher import pusher_client
 from rest_framework import status
 from rest_framework import generics
+from django.shortcuts import render
+from django.http import JsonResponse
+from django.core.mail import EmailMultiAlternatives
+from django.template.loader import render_to_string
+from django.conf import settings
+from django.contrib.auth.tokens import default_token_generator
+from django.utils.http import urlsafe_base64_encode
+from django.utils.encoding import force_bytes
+from django.db.models import Sum
+# Restframework
+from rest_framework import status
+from rest_framework.decorators import api_view, APIView
+from rest_framework.response import Response
+from .serializers import CustomTokenObtainPairSerializer
+from rest_framework import generics
+from rest_framework.permissions import AllowAny, IsAuthenticated
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework_simplejwt.tokens import RefreshToken
+from rest_framework_simplejwt.views import TokenObtainPairView
+
+from drf_yasg import openapi
+from drf_yasg.utils import swagger_auto_schema
+from datetime import datetime
+
+# Others
+import json
+import random
+
+# Custom Imports
+from api import serializers as api_serializers
+from api import models as api_models
 
 
+
+class CustomTokenObtainPairView(TokenObtainPairView):
+    serializer_class = CustomTokenObtainPairSerializer
 
 User = get_user_model()
-
-
 def index(request):
     return render(request, 'gallery.jsx')
 
@@ -143,3 +175,45 @@ class TodoMarkAsCompleted(generics.RetrieveUpdateDestroyAPIView):
         todo.save()
 
         return todo
+    
+
+
+
+
+
+
+
+class ProfileView(generics.RetrieveUpdateAPIView):
+    permission_classes = [permissions.AllowAny]
+    serializer_class = ProfileSerializer
+    
+    def get_object(self):
+       user_id =self.kwargs['user_id']
+       user = CustomUser.objects.get(id=user_id)
+       profile=Profile.objects.get(user=user)
+       
+       return profile
+    
+    @classmethod
+    def get_extra_actions(cls):
+        return []
+    
+
+
+class CategoryListAPIView(generics.ListAPIView):
+    serializer_class =  api_serializers.CategorySerializer
+    permission_classes = [AllowAny]
+
+    def get_queryset(self):
+        return Category.objects.all()
+    
+
+class PostCategoryListAPIView(generics.ListAPIView):
+    serializer_class = api_serializers.PostSerializer
+    permission_classes = [AllowAny]
+
+    def get_queryset(self):
+        category_slug = self.kwargs['category_slug'] 
+        category = api_models.Category.objects.get(slug=category_slug)
+        return api_models.Post.objects.filter(category=category, status="Active")
+        

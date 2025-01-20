@@ -12,6 +12,7 @@ import Message from './message';
 
 
 
+
 function App() {
   const location = useLocation()
   const noNavbar = location.pathname === "/signup" || location.pathname === "/" || location.pathname.includes("password")

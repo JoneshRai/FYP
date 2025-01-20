@@ -12,4 +12,10 @@ class ChatMessageAdmin(admin.ModelAdmin):
 
 admin.site.register(ChatMessage, ChatMessageAdmin)
 admin.site.register(CustomUser)
+admin.site.register(Category)
+admin.site.register(Profile)
+admin.site.register(Post)
+admin.site.register(Comment)
+
+
 
