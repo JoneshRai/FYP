@@ -1,4 +1,4 @@
-/* Base styles */ 
+/* 
 :root {
     --primary-bg: rgb(119, 174, 203);
     --secondary-bg: rgb(251, 251, 251);
@@ -15,17 +15,17 @@
     --input-height: 80px;
     --button-radius: 50px;
 }
-/* Reset styles */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Background section */
+
 .background {
     height: 100vh;
-    background-image: url('./assets/Background.jpeg'); /* Adjust path if needed */
+    background-image: url('./assets/Background.jpeg'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -35,17 +35,17 @@
 }
 
 
-/* Body section */
+
 body {
     font-family: Arial, sans-serif;
 }
 
-/* Layout container */
+
 .container {
     display: flex;
     flex-direction: column;
     margin: auto;
-    margin-top: 10vh; /* Adjust for better vertical centering */
+    margin-top: 10vh; 
     width: var(--container-width);
     background: var(--primary-bg);
     padding: var(--container-padding);
@@ -53,7 +53,7 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Header section */
+
 .header {
     display: flex;
     flex-direction: column;
@@ -75,7 +75,7 @@ body {
     border-radius: 9px;
 }
 
-/* Input section */
+
 .inputs {
     display: flex;
     flex-direction: column;
@@ -91,10 +91,10 @@ body {
     background: var(--secondary-bg);
     border-radius: 6px;
     padding: 0 20px;
-    width: 100%; /* Full width of the container */
+    width: 100%; 
     max-width: 480px; 
     transition: border-color 0.3s ease;
-    border-radius: 6px;  /* Optional: rounded corners */
+    border-radius: 6px; 
 }
 
 .input img {
@@ -110,7 +110,7 @@ body {
     font-size: var(--font-size-medium);
 }
 
-/* Forgot password */
+
 .forgot-password {
     margin-top: 15px;
     color: var(--secondary-text);
@@ -124,7 +124,7 @@ body {
     text-decoration: underline;
 }
 
-/* Submit container */
+
 .submit-container {
     display: flex;
     flex-direction: column;
@@ -159,7 +159,7 @@ body {
     color: var(--gray-text);
 }
 
-/* Link styles */
+
 .switch {
     text-align: center;
     font-size: var(--font-size-small);
@@ -175,7 +175,7 @@ body {
     text-decoration: underline;
 }
 
-/* Responsive styles */
+
 @media (max-width: 768px) {
     .container {
         width: 90%;
@@ -188,4 +188,4 @@ body {
     .submit {
         max-width: 100%;
     }
-}
+} */

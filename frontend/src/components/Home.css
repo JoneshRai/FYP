@@ -1,6 +1,6 @@
-body, html {
-  overflow-x: hidden; /* Prevent horizontal scrolling */
-  margin: 0; /* Remove default margin */
+/* body, html {
+  overflow-x: hidden; 
+  margin: 0; 
 }
 
 .app-container {
@@ -9,7 +9,7 @@ body, html {
 }
 
 .sidebar {
-  width: 70px; /* Adjusted width */
+  width: 70px; 
   background-color: #f4f4f4;
   display: flex;
   flex-direction: column;
@@ -27,20 +27,20 @@ body, html {
 
 .icon-button .icon,
 .icon-button .account-icon {
-  font-size: 24px; /* Icon size */
+  font-size: 24px; 
   color: black;
 }
 
 .icon-button:hover .icon,
 .icon-button:hover .account-icon {
-  color: #007bff; /* Hover effect */
+  color: #007bff; 
 }
 
 .main-content {
   flex: 1;
   display: flex;
   flex-direction: column;
-  overflow-x: hidden; /* Prevent horizontal overflow */
+  overflow-x: hidden; 
 }
 
 .top-bar {
@@ -66,15 +66,15 @@ body, html {
 
 .cards-container {
   display: flex;
-  flex-wrap: wrap; /* Allow cards to wrap to the next line */
-  justify-content: flex-start; /* Distribute the cards evenly */
-  gap: 20px; /* Space between the cards */
+  flex-wrap: wrap; 
+  justify-content: flex-start; 
+  gap: 20px; 
   padding: 20px;
 }
 
 .card {
-  width: calc(25% - 20px); /* Each card takes up 25% of the container minus the gap */
-  margin-bottom: 20px; /* Adds space between the rows */
+  width: calc(25% - 20px); 
+  margin-bottom: 20px; 
   border: 1px solid #ddd;
   border-radius: 5px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -122,4 +122,4 @@ body, html {
 
 
 
-
+ */
