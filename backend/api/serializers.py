@@ -34,20 +34,20 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
 
 
 
-class LoginSerializer(serializers.Serializer):
-    email = serializers.EmailField()
-    password = serializers.CharField(write_only=True)
+# class LoginSerializer(serializers.Serializer):
+#     email = serializers.EmailField()
+#     password = serializers.CharField(write_only=True)
 
-    def to_representation(self, instance):
-        ret = super().to_representation(instance)
-        ret.pop('password', None)  
-        return ret
+#     def to_representation(self, instance):
+#         ret = super().to_representation(instance)
+#         ret.pop('password', None)  
+#         return ret
 
-class ProfileSerializer(serializers.ModelSerializer):
+# class ProfileSerializer(serializers.ModelSerializer):
 
-    class Meta:
-        model = Profile
-        fields = ['id', 'user','full_name','image']
+#     class Meta:
+#         model = Profile
+#         fields = ['id', 'user','full_name','image']
 
 
 
@@ -90,7 +90,14 @@ class RegisterSerializer(serializers.ModelSerializer):
         return user
     
 
-
+class LoginSerializer(serializers.Serializer):
+    email= serializers.EmailField()
+    password = serializers.CharField()
+    
+    def to_representation(self,instance):
+        ret = super().to_representation(instance)
+        ret.pop('password',None)
+        return ret
 
 # class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
 #     @classmethod
@@ -208,6 +215,12 @@ class AuthorSerial(serializers.Serializer):
     
 
 
+
+
+# class EventSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = Event
+#         fields = '__all__'
 
 # class TodoSerializer(serializers.ModelSerializer):
 

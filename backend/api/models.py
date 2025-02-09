@@ -57,7 +57,7 @@ class Profile(models.Model):
     user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
     image = models.FileField(upload_to="image", default="default/default-user.jpg", null=True, blank=True)
     full_name = models.CharField(max_length=100, null=True, blank=True)
-    bio = models.TextField(null=True, blank=True)
+    # bio = models.TextField(null=True, blank=True)
     # about = models.TextField(null=True, blank=True)
     # author = models.BooleanField(default=False)
     # country = models.CharField(max_length=100, null=True, blank=True)
@@ -320,6 +320,17 @@ class Comment(models.Model):
 
 
 
+
+
+# class Event(models.Model):
+#     name = models.CharField(max_length=255)
+#     date = models.DateField()
+#     time = models.TimeField()
+#     location = models.CharField(max_length=255)
+#     description = models.TextField()
+
+#     def __str__(self):
+#         return self.name
 # class Bookmark(models.Model):
 #     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
 #     post = models.ForeignKey(Post, on_delete=models.CASCADE)

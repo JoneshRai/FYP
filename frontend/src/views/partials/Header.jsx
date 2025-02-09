@@ -41,23 +41,13 @@ function Header() {
                                     Category
                                 </Link>
                             </li>
+
                             <li className="nav-item dropdown">
-                                <a className="nav-link dropdown-toggle active" href="#" id="pagesMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Pages
-                                </a>
-                                <ul className="dropdown-menu" aria-labelledby="pagesMenu">
-                                    <li>
-                                        <Link className="dropdown-item" to="/about/">
-                                            <i className="bi bi-person-lines-fill"></i> About
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link className="dropdown-item" to="/contact/">
-                                            <i className="bi bi-telephone-fill"></i> Contact
-                                        </Link>
-                                    </li>
-                                </ul>
+                                <Link className="nav-link active" to="/messages/">
+                                    Messages
+                                </Link>
                             </li>
+                         
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle active" href="#" id="pagesMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Dashboard
@@ -83,9 +73,14 @@ function Header() {
                                             <i className="bi bi-chat-left-quote-fill"></i> Comments
                                         </Link>
                                     </li>
-                                    <li>
+                                    {/* <li>
                                         <Link className="dropdown-item" to="/notifications/">
                                             <i className="fas fa-bell"></i> Notifications
+                                        </Link>
+                                    </li> */}
+                                    <li>
+                                        <Link className="dropdown-item" to="/eventbooking/">
+                                            <i className="fas fa-bell"></i> Eventbookng
                                         </Link>
                                     </li>
                                     <li>

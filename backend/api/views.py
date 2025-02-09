@@ -76,7 +76,32 @@ class RegisterViewset(generics.CreateAPIView):
     serializer_class = RegisterSerializer
 
 
+class LoginViewset(generics.ListAPIView):
+    permission_classes = [permissions.AllowAny]
+    serializer_class = LoginSerializer
 
+    def create(self, request):
+        # Deserialize the incoming data
+        serializer = self.serializer_class(data=request.data)
+
+        if serializer.is_valid():
+            email=serializer.validated_data['email']
+            password = serializer.validated_data['password']
+            
+            user=authenticate(request,email=email, password=password)
+            
+            if user:
+                _,token= AuthToken.objects.create(user)
+                return Response(
+                    {
+                        "user": self.serializer_class(user).data,
+                        "token":token
+                    }
+                )
+            else:
+                return Response({"error":"Invalid Credentials"},status=401)
+        else:
+            return Response(serializer.errors,status=400)
 # class PasswordEmailVerify(generics.RetrieveAPIView):
 #     permission_classes = (AllowAny,)
 #     serializer_class = api_serializer.UserSerializer
@@ -536,7 +561,9 @@ class DashboardUpdatePost(generics.RetrieveUpdateDestroyAPIView):
 
 
 
-
+# class EventListCreateView(generics.ListCreateAPIView):
+#     queryset = Event.objects.all()
+#     serializer_class = EventSerializer
 
 
 

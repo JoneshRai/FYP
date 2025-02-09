@@ -39,7 +39,9 @@ urlpatterns = [
 
 
     # for dashboard
+    # path('events/', EventListCreateView.as_view(), name='event-list-create'),
     path('Dashboard/stats/<user_id>/',Dashboard.as_view(),name='Dashboard'),
+     path('Dashboard/post-list/<user_id>/',DashboardPostlist.as_view(),name='DashboardPostlist'),
     path('DashboardCommentList/<user_id>/',DashboardCommentList.as_view(),name='DashboardCommentList'),
     path('DashboardCommentReply/<user_id>/',DashboardCommentReply.as_view(),name='DashboardCommentReply'),
     path('DashboardPostCreate/',DashboardPostCreate.as_view(),name='DashboardPostCreate'),

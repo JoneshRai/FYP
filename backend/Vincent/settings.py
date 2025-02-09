@@ -2,14 +2,14 @@
 import os
 from pathlib import Path
 from datetime import timedelta
-from environs import Env
-env = Env()
-env.read_env()
+# from environs import Env
+
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 from datetime import timedelta
-from environs import Env
-env = Env()
-env.read_env()
+
+
+
 
 
 

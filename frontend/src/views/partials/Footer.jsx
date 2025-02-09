@@ -20,18 +20,18 @@ function Footer() {
                 <div className="col-md-4">
                     <ul className="nav text-primary-hover justify-content-center justify-content-md-end">
                         <li className="nav-item">
-                            <a className="nav-link text-white px-2 fs-5" href="https://facebook.com/desphixs">
+                            <a className="nav-link text-white px-2 fs-5" href="">
                                 <i className="fab fa-facebook-square" />
                             </a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link text-white px-2 fs-5" href="https://twitter.com/desphixs">
-                                <i className="fab fa-twitter-square" />
+                            <a className="nav-link text-white px-2 fs-5" href="https://www.instagram.com/dukhe_atma_/?next=%2F">
+                                <i className="fab fa-instagram-square" />
                             </a>
                         </li>
 
                         <li className="nav-item">
-                            <a className="nav-link text-white px-2 fs-5" href="https://youtube.com/@desphixs">
+                            <a className="nav-link text-white px-2 fs-5" href="">
                                 <i className="fab fa-youtube-square" />
                             </a>
                         </li>
